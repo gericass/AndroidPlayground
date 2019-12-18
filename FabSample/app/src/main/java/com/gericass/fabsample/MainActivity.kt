@@ -1,8 +1,10 @@
 package com.gericass.fabsample
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import uk.co.markormesher.android_fab.FloatingActionButton
 import uk.co.markormesher.android_fab.SpeedDialMenuAdapter
@@ -38,5 +40,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.speedDialMenuAdapter = fabAdapter
+        val button = findViewById<Button>(R.id.button_skimach)
+        button.setOnClickListener {
+            Intent(this, SkimachiActivity::class.java).run {
+                startActivity(this)
+            }
+        }
     }
 }
